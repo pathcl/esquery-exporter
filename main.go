@@ -10,6 +10,7 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/render"
+	"github.com/olivere/elastic"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
@@ -144,4 +145,3 @@ func trackStatusCodes(statusCodeCollector *prometheus.CounterVec, statusCode int
 		statusCodeCollector.WithLabelValues(env, strconv.Itoa(statusCode), "400").Inc()
 	}
 }
-
